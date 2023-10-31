@@ -9,17 +9,7 @@ from rest_framework.renderers import JSONRenderer
 
 def student_detail(request, pk):
     stu = Student.objects.get(id = pk)
-    # print('student object')
-    # print(stu)
     serilizer = StudentSerilizer(stu)
-    # print('serilizer')
-    # print(serilizer)
-    # print('Serilizer data')
-    # print(serilizer.data)
-    # json_data = JSONRenderer().render(serilizer.data)
-    # print('Json data')
-    # print(json_data)
-    # return HttpResponse(json_data, content_type = 'application/json')
     return JsonResponse(serilizer.data)
 
 
